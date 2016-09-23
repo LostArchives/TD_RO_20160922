@@ -1,7 +1,7 @@
 import java.io.FileNotFoundException;
 import java.util.Random;
 
-public class TestMarcheAleatoire {
+public class TestMarcheAleatoire extends TestRechercheAleatoire {
 
 	static int pasEvaluation = 40;
 	static int nbExecution = 100;
@@ -64,20 +64,6 @@ public class TestMarcheAleatoire {
 		
 	}
 	
-	public static int[] gen_randomArray(int size) {
-		
-		Random r =new Random();
-		int[] arr = new int[size];
-		
-	    for(int i = 0; i < size; i++) {
-	    	if (r.nextBoolean()==true)
-	    		arr[i]=1;
-	    	else
-	    		arr[i]=0; 
-	    }
-	    
-	    return arr;
-	    
-	}
+	
 
 }
