@@ -1,8 +1,10 @@
 import java.io.BufferedReader;
+import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Random;
 
 public class Knapsack {
 
@@ -161,6 +163,8 @@ public class Knapsack {
 		
 	}
 	
+	
+	
 	///Méthode permettant d'afficher certains attributs de l'objet
 	public void print() {
 		
@@ -177,6 +181,8 @@ public class Knapsack {
 		_totalProfit=0;
 		_beta = 0;
 	}
+	
+	
 	
 	
 		

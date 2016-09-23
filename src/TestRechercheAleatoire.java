@@ -6,12 +6,11 @@ public class TestRechercheAleatoire {
 	static int pasEvaluation = 40;
 	static int nbExecution = 100;
 	
-	public static void main(String[] args) {
+	public static void maintoto(String[] args) {
 		// TODO Auto-generated method stub
 		
 		Knapsack k =new Knapsack("src/ks_1000.dat");
-		CsvWriter c = new CsvWriter("RandomResearch.csv"); //.csv généré à la racine du projet
-		
+		CsvWriter c = new CsvWriter("RandomResearchRA.csv"); //.csv généré à la racine du projet
 		
 		StringBuilder sb = new StringBuilder();
 		sb.append("NbEvaluations;Fbest\n");
@@ -20,9 +19,9 @@ public class TestRechercheAleatoire {
 		
 		for (int cnt=0;cnt<nbExecution;cnt++) {
 			
-			double maxEvaluation = rechercheAleatoire(k,nbEvaluation);
+			double maxEvaluationRA = rechercheAleatoire(k,nbEvaluation);
 			
-			sb.append(nbEvaluation+";"+maxEvaluation+"\n");
+			sb.append(nbEvaluation+";"+maxEvaluationRA+"\n");
 			
 			nbEvaluation+= pasEvaluation;
 		}
@@ -52,6 +51,8 @@ public class TestRechercheAleatoire {
 	    return arr;
 	    
 	}
+	
+	
 	
 	public static double rechercheAleatoire(Knapsack k,int p_evaluation) {
 		
