@@ -12,13 +12,13 @@ public class GlobalTest {
 		// TODO Auto-generated method stub
 
 		//Knapsack k = new Knapsack("src/ks_1000.dat");
-		CalculationMethod cm = new CalculationMethod(new Knapsack("src/ks_1000.dat"));
+		CalculationMethod cm = new CalculationMethod(new Knapsack("resources/ks_1000.dat"));
 		CalculationLauncher cl = new CalculationLauncher(cm,nbExecution,pasEvaluation,maxEvaluation);
 		
 		//cl.LaunchCalculation(cm,"recherche","rechercheAleatoire.csv");
 		//cl.LaunchCalculation(cm,"marche","marcheAleatoire");
-		cl.LaunchCalculation(cm,"hillclimber","hillClimber");
-		cl.LaunchCalculation(cm,"hillclimberfirst","hillClimberFirst");
+		cl.LaunchCalculation(cm,"hillclimber","output/hillClimber");
+		cl.LaunchCalculation(cm,"hillclimberfirst","output/hillClimberFirst");
 		
 		
 		///Test avec évaluation fixe à 1000
