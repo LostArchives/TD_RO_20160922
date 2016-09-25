@@ -16,7 +16,7 @@ public class GlobalTest {
 		CalculationMethod cm = new CalculationMethod(new Knapsack("resources/ks_1000.dat"));
 		CalculationLauncher cl = new CalculationLauncher(cm,nbExecution,pasEvaluation,maxEvaluation);
 		
-		//cl.LaunchCalculation(cm,"recherche","rechercheAleatoire.csv");
+		//cl.LaunchCalculation(cm,"recherche","rechercheAleatoire");
 		//cl.LaunchCalculation(cm,"marche","marcheAleatoire");
 		cl.LaunchCalculation(cm,"hillclimber","output/hillClimber");
 		cl.LaunchCalculation(cm,"hillclimberfirst","output/hillClimberFirst");

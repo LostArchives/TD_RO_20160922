@@ -60,6 +60,7 @@ public class CalculationMethod {
 		}
 		
 		System.out.println("Le profit max est de " + theMaxProfit + " pour "+p_evalBeforeBest);
+		
 		return theMaxProfit;
 		
 	}
@@ -90,6 +91,7 @@ public class CalculationMethod {
 		}
 		
 		System.out.println("Le profit max est de " + theMaxProfit + " pour "+p_evalBeforeBest);
+		
 		return theMaxProfit;
 	}
 
@@ -112,7 +114,9 @@ public class CalculationMethod {
 			}
 			
 		}
+		
 		System.out.println("Le profit max est de " + theMaxProfit + " pour "+p_evalBeforeBest);
+		
 		return theMaxProfit;
 	}
 	
