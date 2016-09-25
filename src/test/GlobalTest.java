@@ -11,8 +11,8 @@ import model.Knapsack;
  */
 public class GlobalTest {
 
-	static int startEvaluation = 100; //De 100
-	static int maxEvaluation = 10000; //à 10000
+	static int startEvaluation = 100; // De 100
+	static int maxEvaluation = 10000; // à 10000
 	static int pasEvaluation = 100; // avec un pas de 100
 	static int nbExecution = 10; // le tout 10 fois
 	
