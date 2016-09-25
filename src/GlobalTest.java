@@ -1,3 +1,6 @@
+import model.CalculationLauncher;
+import model.CalculationMethod;
+import model.Knapsack;
 
 public class GlobalTest {
 

@@ -1,3 +1,5 @@
+package model;
+
 public class CalculationLauncher {
 
 	private CalculationMethod cmethod;
