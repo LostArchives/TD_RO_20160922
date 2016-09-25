@@ -1,10 +1,10 @@
 import java.io.FileNotFoundException;
-import java.util.Random;
 
 public class TestMarcheAleatoire extends TestRechercheAleatoire {
 
-	static int pasEvaluation = 40;
-	static int nbExecution = 100;
+	static int pasEvaluation = 100;
+	static int maxEvaluation = 10000;
+	static int nbExecution = 30;
 	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
@@ -15,42 +15,36 @@ public class TestMarcheAleatoire extends TestRechercheAleatoire {
 		StringBuilder sb = new StringBuilder();
 		sb.append("NbEvaluations;Fbest\n");
 		
-		int nbEvaluation = pasEvaluation;
 		
-		for (int cnt=0;cnt<nbExecution;cnt++) {
+		
+		for (int cntExecution=0;cntExecution<nbExecution;cntExecution++) {
 			
-			double maxEvaluationMA = marcheAleatoire(k,nbEvaluation);
+			for (int cntEvaluation = pasEvaluation;cntEvaluation<maxEvaluation;cntEvaluation+=pasEvaluation ) {
+				
+				double maxEvaluationMA = marcheAleatoire(k,cntEvaluation);
+				
+				sb.append(cntEvaluation+";"+maxEvaluationMA+"\n");
+				
+				cntEvaluation+= pasEvaluation;
+			}
 			
-			sb.append(nbEvaluation+";"+maxEvaluationMA+"\n");
 			
-			nbEvaluation+= pasEvaluation;
 		}
 		
-		try {
-			c2.Write(sb.toString());
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		c2.Write(sb.toString());
 		
 	}
 	
 	public static double marcheAleatoire(Knapsack k,int p_evaluation) {
 		
 		double leMax = 0;
-		int[] presence = gen_randomArray(k.getNbObjects());
-		
-		//System.out.println(k.getNbObjects());
+		boolean[] presence = gen_randomArray(k.getNbObjects());
 		
 		for (int cnt=0;cnt<p_evaluation;cnt++) {
 			
-			
 			int actualIndex = cnt%presence.length;
-			//System.out.println(actualIndex);
-			if (presence[actualIndex]==0)
-				presence[actualIndex]=1;
-			else
-				presence[actualIndex]=0;
+			
+			presence[actualIndex]=!presence[actualIndex];
 			
 			double leProfit=k.evaluate(presence);
 			

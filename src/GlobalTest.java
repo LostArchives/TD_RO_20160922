@@ -1,0 +1,28 @@
+
+public class GlobalTest {
+
+	static int pasEvaluation = 100;
+	static int maxEvaluation = 1000;
+	static int nbExecution = 10;
+	
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		//Knapsack k = new Knapsack("src/ks_1000.dat");
+		CalculationMethod cm = new CalculationMethod(new Knapsack("src/ks_1000.dat"));
+		CalculationLauncher cl = new CalculationLauncher(cm,nbExecution,pasEvaluation,maxEvaluation);
+		
+		//cl.LaunchCalculation(cm,"recherche","rechercheAleatoire.csv");
+		//cl.LaunchCalculation(cm,"marche","marcheAleatoire");
+		cl.LaunchCalculation(cm,"hillclimber","hillClimber");
+		cl.LaunchCalculation(cm,"hillclimberfirst","hillClimberFirst");
+		
+		
+		///Test avec évaluation fixe à 1000
+		//cl.LaunchCalculationWithFixedEval(cm,"recherche","rechercheAleatoire",1000);
+		//cl.LaunchCalculationWithFixedEval(cm,"marche","marcheAleatoire",1000);
+		//cl.LaunchCalculationWithFixedEval(cm,"hillclimber","hillClimber",500);
+		//cl.LaunchCalculationWithFixedEval(cm,"hillclimberfirst","hillClimberFirst",500);
+	}
+
+}

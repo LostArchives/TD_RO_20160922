@@ -137,12 +137,12 @@ public class Knapsack {
 	}
 	
 	///Méthode permettant d'évaluer le profit total
-	public double evaluate(int[] presence) {
+	public double evaluate(boolean[] presence) {
 		
 		initVar(); //Réinitialisation des variables
 		
 		for (int cnt=0;cnt<_nbObjects;cnt++) {
-			if (presence[cnt]==1) {
+			if (presence[cnt]) {
 				_totalWeight+=_poids.get(cnt);
 				_totalProfit+=_profits.get(cnt);
 			}

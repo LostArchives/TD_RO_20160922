@@ -11,11 +11,19 @@ public class CsvWriter {
 	}
 	
 	///Méthode permettant de créer et d'écrire des données dans le fichier .csv
-	public void Write(String data) throws FileNotFoundException {
+	public void Write(String data) {
 		
-		PrintWriter pw = new PrintWriter(new File(fileName));
-        pw.write(data);
-        pw.close();
+		try {
+			
+			PrintWriter	pw = new PrintWriter(new File(fileName));
+			 pw.write(data);
+		     pw.close();
+		     
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+       
         
 	}
 }
