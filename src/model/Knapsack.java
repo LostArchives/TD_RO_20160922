@@ -7,6 +7,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+/**
+ * Cette classe permet de gérer un knapsack
+ * avec le chargement (fichier externe) et le calcul de certaines informations
+ * @author Valentin
+ *
+ */
 public class Knapsack {
 
 	private String _filePath;	//Chemin du fichier .txt contenant les infos des objets
@@ -85,7 +91,9 @@ public class Knapsack {
 		this._totalProfit = sumProfit;
 	}
 
-	///Méthode permettant d'extraire les infos du fichier .txt
+	/**
+	 * Méthode permettant d'extraire les infos du fichier .txt
+	 */
 	public void LoadInfo() {
 		
 		int _compteur=0; //Compteur pour repérer les lignes
@@ -137,7 +145,12 @@ public class Knapsack {
 		
 	}
 	
-	///Méthode permettant d'évaluer le profit total
+	/**
+	 * Méthode permettant d'évaluer le profit total
+	 * @param presence Tableau de booléen qui détermine les objets présents
+	 * ou non
+	 * @return Le profit total avec ce tableau de booléen
+	 */
 	public double evaluate(boolean[] presence) {
 		
 		initVar(); //Réinitialisation des variables
@@ -160,13 +173,15 @@ public class Knapsack {
 			_totalProfit-=_beta*(_totalWeight-_capacity);
 		}
 		
-		return _totalProfit;
+		return _totalProfit; //Retourne le profit total avec ce tableau de booléen
 		
 	}
 	
 	
 	
-	///Méthode permettant d'afficher certains attributs de l'objet
+	/**
+	 * Méthode permettant d'afficher certains attributs de l'objet
+	 */
 	public void print() {
 		
 		System.out.println("Nombre d'objets: "+_nbObjects);
@@ -176,7 +191,9 @@ public class Knapsack {
 			
 	}
 	
-	///Méthode permettant de réinitialiser certains attributs (utiles pour calculs)
+	/**
+	 * Méthode permettant de réinitialiser certains attributs (utile pour calculs)
+	 */
 	private void initVar() {
 		_totalWeight=0;
 		_totalProfit=0;
