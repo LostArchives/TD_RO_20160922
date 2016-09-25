@@ -1,17 +1,18 @@
 package model;
 
 /**
- * Cette classe permet de lancer une méthode de calcul à un certain ryhtme
+ * Cette classe permet de lancer une méthode de calcul à un certain rythme
  *  avec tous les paramètres nécessaires
  *  
- * @author Valentin
+ * @author Valentin Mullet
  *
  */
 public class CalculationLauncher {
 
 	private CalculationMethod cmethod; //Méthode de calcul associé au launcher
-	private int pasEvaluation; // Le pas entre chaque évaluation ( ex : 100)
+	private int startEvaluation; //La valeur de départ pour l'évaluation (ex : 100)
 	private int maxEvaluation; // Le maximum d'évaluation pour chaque exécution ( ex : 10000)
+	private int pasEvaluation; // Le pas entre chaque évaluation ( ex : 100)
 	private int nbExecution; //Nombre d'exécution de chaque méthode de calcul ( ex : 10 donc 10 fois des évaluations
 	// de 100 à 10000 avec un pas de 100)
 	
@@ -23,6 +24,16 @@ public class CalculationLauncher {
 
 	public void setCmethod(CalculationMethod cmethod) {
 		this.cmethod = cmethod;
+	}
+
+
+	public int getStartEvaluation() {
+		return startEvaluation;
+	}
+
+
+	public void setStartEvaluation(int startEvaluation) {
+		this.startEvaluation = startEvaluation;
 	}
 
 
@@ -56,9 +67,10 @@ public class CalculationLauncher {
 	}
 
 
-	public CalculationLauncher(CalculationMethod p_cm,int p_nbExecution,int p_pasEvaluation,int p_maxevaluation) {
+	public CalculationLauncher(CalculationMethod p_cm,int p_nbExecution,int p_startEvaluation,int p_maxevaluation,int p_pasEvaluation) {
 		cmethod=p_cm;
 		nbExecution = p_nbExecution;
+		startEvaluation = p_startEvaluation;
 		pasEvaluation = p_pasEvaluation;
 		maxEvaluation = p_maxevaluation;
 	}
@@ -79,7 +91,7 @@ public class CalculationLauncher {
 		
 		for (int cntExecution=0;cntExecution<nbExecution;cntExecution++) {
 			
-			for (int cntEvaluation=pasEvaluation;cntEvaluation<=maxEvaluation;cntEvaluation+=pasEvaluation) {
+			for (int cntEvaluation=startEvaluation;cntEvaluation<=maxEvaluation;cntEvaluation+=pasEvaluation) {
 				
 				double maxFound=0; // le maximum trouvé dans ce nombre d'évaluations pour la méthode  de calcul
 				
@@ -104,7 +116,7 @@ public class CalculationLauncher {
 					default:
 						break;
 				}
-				sb.append(cntEvaluation+";"+maxFound+"\n");
+				sb.append(cntEvaluation+";"+maxFound+"\n"); //concaténation du résultat
 				
 			}
 			

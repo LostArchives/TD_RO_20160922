@@ -3,7 +3,8 @@ import java.util.Random;
 
 /**
  * Cette classe permet de gérer les méthodes de calcul avec le knapsack associé
- * @author Valentin
+ * 
+ * @author Valentin Mullet
  *
  */
 public class CalculationMethod {

@@ -3,6 +3,12 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 
+/**
+ * Classe permettant de générer des fichiers (utilisé pour des .csv dans ce projet)
+ * 
+ * @author Valentin Mullet
+ *
+ */
 public class CsvWriter {
 
 	private String fileName; //Chemin du fichier .csv généré

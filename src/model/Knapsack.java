@@ -10,7 +10,8 @@ import java.util.Random;
 /**
  * Cette classe permet de gérer un knapsack
  * avec le chargement (fichier externe) et le calcul de certaines informations
- * @author Valentin
+ * 
+ * @author Valentin Mullet
  *
  */
 public class Knapsack {
